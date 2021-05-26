@@ -1,0 +1,36 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   3 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "n"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "goodSteps"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "done"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
